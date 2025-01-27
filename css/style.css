@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --primary: rgb(160, 34, 133);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-family: Poppins, monospace;
+    height: 100%;
+}
+
+#app-title {
+    color: white;
+    padding: 0.5em;
+    font-weight: 800;
+    font-size: xx-large;
+    background-color: var(--primary);
+}
+
+#cta-button {
+    border: none;
+    border-radius: 15px;
+    background-color: var(--primary);
+    padding: 0.5rem 0;
+    color: white;
+    font: inherit;
+    
+}
+
+.title {
+    /* bottom: calc(2rem + 1rem + 1rem); */
+    /* margin-bottom: 8rem; */
+    width: 100%;
+    position: absolute;
+    bottom: 2rem;
+}
+
+.title > * {
+    position: relative;
+    margin: 10px auto;
+    width: min(90%, 800px);
+    display: block;
+}
+
+.background-image {
+    width: min(100%, 600px);
+    aspect-ratio: 12/16;
+    margin: 0 auto;
+
+    background: 
+        /* linear-gradient(0deg, transparent, rgba(255, 255,255,0.5), transparent),  */
+        /* linear-gradient(90deg, rgba(255, 255, 255, 1), rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0) 60%, rgba(255, 255, 255, 1)),  */
+        url('../images/background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
