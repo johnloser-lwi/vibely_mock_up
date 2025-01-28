@@ -24,6 +24,7 @@ body {
     font-weight: 800;
     font-size: xx-large;
     background-color: var(--primary);
+    text-transform: uppercase;
 }
 
 #cta-button {
@@ -33,6 +34,7 @@ body {
     padding: 0.5rem 0;
     color: white;
     font: inherit;
+    text-transform: uppercase;
     
 }
 
