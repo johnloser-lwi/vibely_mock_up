@@ -3,7 +3,6 @@ import { Page } from './page.js';
 export class Login extends Page {
     constructor () {
         super();
-        this.page = "../pages/login.html";
     }
 
     callToActionHandler() {

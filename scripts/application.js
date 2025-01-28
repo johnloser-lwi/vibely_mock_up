@@ -1,7 +1,6 @@
 export class Application {
     constructor(doc, pages) {
         this.doc = doc;
-
         this.pages = pages;
     }
 
@@ -14,8 +13,13 @@ export class Application {
     }
 
     loadPage(page) {
+        if (!this.pages.hasOwnProperty(page)) {
+            console.error(`Page ${page} does not exist in the pages map.`);
+            return;
+        }
+
         let new_page = this.pages[page];
-        fetch(new_page.page)
+        fetch(`../pages/${page}.html`)
             .then(response => response.text())
             .then(html => {
                 const parser = new DOMParser();
