@@ -23,7 +23,7 @@ body {
     position: relative;
 }
 
-#app-title {
+.app-title {
     color: white;
     padding: 0.15rem 0.3rem;
     font-size: 2rem;
@@ -49,7 +49,7 @@ body {
     translate: -50% -50%;
 }
 
-#cta-button {
+.login .cta-button {
     border: none;
     border-radius: 15px;
     background-color: var(--primary);
@@ -61,21 +61,21 @@ body {
     transition: 0.1s;
 }
 
-#cta-button:hover {
+.login .cta-button:hover {
     background-color: var(--secondary);
 }
 
-.title {
+.login .title {
     width: 100%;
     align-items: end;
     flex: 1;
 }
 
-.title > * {
+.login .title > * {
     margin-bottom: 1rem;
 }
 
-.background-image {
+.login .background-image {
     width: 100%;
     max-height: 100%;
     overflow: hidden;
@@ -85,12 +85,12 @@ body {
 }
 
 @media screen and (max-height: 667px){
-    .background-image {
+    .login .background-image {
         width: 80%;
     }
 }
 
-.background-image > div{
+.login .background-image > div{
     position: relative;
     z-index: -50;
     aspect-ratio: 3/4;
