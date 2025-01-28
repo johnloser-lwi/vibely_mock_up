@@ -17,6 +17,7 @@ html {
 
 body {
     height: 100%;
+    align-content: center;
     background-color: white;
     color: black
 }
@@ -31,18 +32,20 @@ body {
     position: fixed;
     width: 100%;
     z-index: 100;
+    top: 0;
 }
 
 .login {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: stretch;
     justify-content: center;
-    height: 90vh;
     width: min(90%,550px);
-    position: relative;
-    translate: 0 5%;
-    margin: 0 auto;
+    height: 100%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
 }
 
 #cta-button {
@@ -73,10 +76,10 @@ body {
 
 .background-image {
     width: 100%;
-    flex: 3;
+    margin: 0 auto;
     align-content: center;
-    max-height: 100vh;
     overflow: hidden;
+    flex: 2;
 }
 
 @media screen and (max-height: 667px){
@@ -88,7 +91,7 @@ body {
 .background-image > div{
     position: relative;
     z-index: -50;
-    translate: 0 80px;
+    translate: 0 20%;
     aspect-ratio: 3/4;
     background: 
         linear-gradient(0deg, rgba(255, 255,255,1) 20%, transparent 90%), 
