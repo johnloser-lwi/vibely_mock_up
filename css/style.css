@@ -12,7 +12,7 @@
 
 html {
     font-family: Poppins, monospace;
-    height: 100%;
+    height: 100vh;
 }
 
 body {
@@ -21,11 +21,22 @@ body {
 
 #app-title {
     color: white;
-    padding: 0.15em 0.3em;
+    padding: 0.15rem 0.3rem;
+    font-size: 2rem;
     font-weight: 800;
-    font-size: xx-large;
     background-color: var(--primary);
     text-transform: uppercase;
+}
+
+.login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: calc(100vh - 0.3rem - 5rem);
+    width: min(90%,550px);
+    position: relative;
+    margin: 0 auto;
 }
 
 #cta-button {
@@ -36,7 +47,7 @@ body {
     color: white;
     font: inherit;
     text-transform: uppercase;
-
+    width: 100%;
     transition: 0.1s;
 }
 
@@ -45,25 +56,32 @@ body {
 }
 
 .title {
-    /* bottom: calc(2rem + 1rem + 1rem); */
-    /* margin-bottom: 8rem; */
     width: 100%;
-    position: absolute;
-    bottom: 5vh;
+    align-items: end;
+    flex: 1;
 }
 
 .title > * {
-    position: relative;
-    margin: 10px auto;
-    width: min(90%, 600px);
-    display: block;
+    margin-bottom: 1rem;
 }
 
 .background-image {
-    width: min(600px, 100vw);
-    aspect-ratio: 3/4;
-    margin: 8vh auto;
+    width: 100%;
+    flex: 2;
+    align-content: center;
+}
 
+@media screen and (max-height: 667px){
+    .background-image {
+        width: 80%;
+    }
+}
+
+.background-image > div{
+    position: relative;
+    z-index: -50;
+    translate: 0 40px;
+    aspect-ratio: 3/4;
     background: 
         linear-gradient(0deg, rgba(255, 255,255,1) 20%, transparent 90%), 
         /* linear-gradient(90deg, rgba(255, 255, 255, 1), rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0) 60%, rgba(255, 255, 255, 1)),  */
