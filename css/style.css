@@ -28,6 +28,8 @@ body {
     font-weight: 800;
     background-color: var(--primary);
     text-transform: uppercase;
+    position: fixed;
+    width: 100%;
 }
 
 .login {
@@ -69,7 +71,7 @@ body {
 
 .background-image {
     width: 100%;
-    flex: 2;
+    flex: 3;
     align-content: center;
     max-height: 70vh;
 }
@@ -83,7 +85,7 @@ body {
 .background-image > div{
     position: relative;
     z-index: -50;
-    translate: 0 40px;
+    translate: 0 80px;
     aspect-ratio: 3/4;
     background: 
         linear-gradient(0deg, rgba(255, 255,255,1) 20%, transparent 90%), 
