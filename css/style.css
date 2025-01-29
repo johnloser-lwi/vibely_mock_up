@@ -1,8 +1,32 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 :root {
-    --primary: rgb(158, 20, 128);
+    /* --primary: rgb(158, 20, 128);
     --secondary: rgb(219, 24, 174);
+    --card: rgb(245, 245, 245);
+    --card-highlight: white;
+    --card-status: grey;
+    --background: white;
+    --font-color1: black;
+    --font-color2: white; */
+    --primary: #FED200;
+    --secondary: #FFEE54;
+    --card: #55447B;
+    --card-highlight: #FED200;
+    --card-status: rgb(200,200,200);
+    --profile-highlight: #55447B;
+    --background: #3D2861;
+    --font-color1: white;
+    --font-color2: black;
+    -webkit-user-select: none; /* Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; 
+    -webkit-user-drag: none;
+}
+
+img {
+    pointer-events: none;
 }
 
 * {
@@ -17,16 +41,17 @@ html {
 
 body {
     height: 100%;
-    background-color: white;
-    color: black;
+    background-color: var(--background);
+    color: var(--font-color1);
     position: relative;
 }
 
 .app-title {
-    color: white;
-    padding: 0.15rem 0.3rem;
-    font-size: 2rem;
+    color: var(--font-color2);
+    padding: 0.15em 0.3em;
+    font-size: 2em;
     font-weight: 800;
+    max-height: 8%;
     background-color: var(--primary);
     text-transform: uppercase;
     position: fixed;
@@ -35,32 +60,39 @@ body {
     top: 0;
 }
 
+main {
+    width: min(90%,500px);
+    height: 90%;
+    justify-content: center;
+    position: absolute;
+    top: 8%;
+    left: 50%;
+    translate: -50%;
+}
+
 .login {
     display: flex;
     flex-direction: column;
     align-items: stretch;
-    justify-content: center;
-    width: min(90%,500px);
-    height: 100%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    translate: -50% -50%;
 }
 
-.login .cta-button {
+.shadow {
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+}
+
+button {
     border: none;
     border-radius: 15px;
     background-color: var(--primary);
     padding: 0.5rem 0;
-    color: white;
+    color: var(--font-color2);
     font: inherit;
     text-transform: uppercase;
     width: 100%;
     transition: 0.1s;
 }
 
-.login .cta-button:hover {
+button:hover {
     background-color: var(--secondary);
 }
 
@@ -95,10 +127,108 @@ body {
     aspect-ratio: 3/4;
     translate: 0 20%;
     background: 
-        linear-gradient(0deg, rgba(255, 255,255,1) 20%, transparent 90%), 
+        linear-gradient(0deg, var(--background) 20%, transparent 90%), 
         /* linear-gradient(90deg, rgba(255, 255, 255, 1), rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0) 60%, rgba(255, 255, 255, 1)),  */
-        url('../images/background.jpg');
+        url('../images/background.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+}
+
+.home {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto 1fr;
+    grid-template-areas: "title1" "friends" "start" "title2" "activities";
+}
+
+.home .friend-title {
+    grid-area: title1;
+}
+
+.home .friends {
+    display: flex;
+    flex-direction: row;
+    grid-area: friends;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: scroll;
+}
+
+.friend {
+    text-align: center;
+    padding: 10px 20px 0 20px;
+    position: relative;
+    transition: 0.2s background-color;
+}
+
+.friend:hover {
+    background-color: var(--profile-highlight);
+}
+
+.friend::after {
+    content: "";
+    background-color: lightgreen;
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    bottom: 35%;
+    right: 25%;
+    border-radius: 50%;
+    z-index: 100;
+}
+
+.friend.away::after{
+    background-color: yellow;
+}
+
+.friend.busy::after{
+    background-color: red;
+}
+
+.friend > img {
+    border-radius: 50%;
+}
+
+.friend > p {
+    position: relative;
+    bottom: 0.5em;
+}
+
+.home #new-act-button {
+    grid-area: start;
+    margin: 1em 0;
+}
+
+.home .activity-title {
+    grid-area: title2;
+}
+
+.home .activities {
+    grid-area: activities;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    max-height: 100%;
+    overflow-y: scroll;
+    margin-bottom: 1em;
+}
+
+.activity {
+    padding: 1.2em;
+    margin: 0.5em 1em;
+    border-radius: 10px;
+    background-color: var(--card);
+    transition:  0.2s background-color;
+}
+
+.activity:hover {
+    background-color: var(--card-highlight);
+}
+
+.activity .status {
+    width: 100%;
+    color: var(--card-status);
+    text-align: end;
+    font-size: .8em;
 }

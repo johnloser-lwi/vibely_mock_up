@@ -12,9 +12,8 @@ export class Login extends Page {
     init(app) {
         super.init(app);
 
-        for (let button of this.app.doc.getElementsByClassName('cta-button')) {
-            button.onclick = this.callToActionHandler.bind(this);
-        }
+        let button = this.app.doc.getElementById('cta-button');
+        button.onclick = this.callToActionHandler.bind(this);
         
     }
 }

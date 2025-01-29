@@ -5,7 +5,16 @@ export class Home extends Page {
         super();
     }
 
+    openActivity() {
+        this.app.loadPage('activity');
+    }
+
     init(app) {
         super.init(app);
+
+        for (let act of this.app.doc.getElementsByClassName('activity'))
+        {
+            act.onclick = this.openActivity.bind(this);
+        }
     }
 }
