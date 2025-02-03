@@ -169,8 +169,11 @@ button:hover {
     background-repeat: no-repeat;
 }
 
-.home {
+.page {
     width: min(100%, 550px);
+}
+
+.home {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto auto auto auto 1fr;
@@ -181,11 +184,10 @@ button:hover {
     grid-area: title1;
 }
 
-.home .friends {
+.friends {
     display: flex;
     flex-direction: row;
     grid-area: friends;
-    width: 100%;
     max-width: 100%;
     overflow-x: scroll;
     scrollbar-width: none;
@@ -242,13 +244,16 @@ button:hover {
     width: auto;
 }
 
-.home .activity-title {
-    grid-area: title2;
+.activity-title {
     margin: 0 0.5em;
 }
 
-.home .activities {
-    grid-area: activities;
+.home .activity-title {
+    grid-area: title2;
+    
+}
+
+.activities {
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -256,6 +261,11 @@ button:hover {
     overflow-y: scroll;
     margin-bottom: 1em;
 }
+
+.home .activities {
+    grid-area: activities;
+}
+
 
 .activity {
     padding: 1.2em;
@@ -274,4 +284,60 @@ button:hover {
     color: var(--card-status);
     text-align: end;
     font-size: .8em;
+}
+
+.activity-browser {
+    display: grid;
+    width: 100%;
+    grid-template-rows: 2em max-content max-content max-content 1fr;
+    grid-template-columns: 1fr;
+    grid-template-areas: "description" "title1" "featured" "title2" "more";
+}
+
+.activity-browser .title1 {
+    grid-area: title1;
+}
+
+
+.activity-browser .title2 {
+    grid-area: title2;
+}
+
+.activity-browser .featured{
+    grid-area: featured;
+}
+
+.activity-browser .more{
+    grid-area: more;
+}
+
+.activity-browser .description {
+    grid-area: description;
+    margin: 0 0.5em;
+}
+
+.watch-together {
+    display: grid;
+    grid-template-rows: 1fr auto max-content;
+    grid-template-columns: 1fr;
+    grid-template-areas: "content" "friends" "button";
+}
+
+.watch-together .content {
+    grid-area: content;
+
+    background-color: black;
+    margin: 1em 0.5em;
+}
+
+.watch-together .friends {
+    grid-area: friends;
+    justify-content: space-between;
+    max-width: 100%;
+}
+
+.watch-together #exit-btn {
+    grid-area: button;
+    margin: 1em 0.5em;
+    width: auto;
 }
