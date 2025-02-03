@@ -1,0 +1,23 @@
+{
+  "name": "vibely_mock_up",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/johnloser-lwi/vibely_mock_up.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/johnloser-lwi/vibely_mock_up/issues"
+  },
+  "homepage": "https://github.com/johnloser-lwi/vibely_mock_up#readme",
+  "description": "",
+  "devDependencies": {
+    "stylelint": "^16.14.1",
+    "stylelint-config-standard": "^37.0.0"
+  }
+}
