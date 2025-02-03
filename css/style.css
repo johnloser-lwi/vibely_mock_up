@@ -169,10 +169,6 @@ button:hover {
     background-repeat: no-repeat;
 }
 
-.page {
-    width: min(100%, 550px);
-}
-
 .home {
     display: grid;
     grid-template-columns: 1fr;
@@ -288,8 +284,7 @@ button:hover {
 
 .activity-browser {
     display: grid;
-    width: 100%;
-    grid-template-rows: 2em max-content max-content max-content 1fr;
+    grid-template-rows: 5% 5% 20% 5% 65%;
     grid-template-columns: 1fr;
     grid-template-areas: "description" "title1" "featured" "title2" "more";
 }
